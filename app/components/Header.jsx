@@ -41,7 +41,7 @@ const Header = () => {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
-        className="max-w-2xl mx-auto font-Ovo"
+        className="max-w-2xl mx-auto font-Ovo text-lg md:text-xl"
       >
         I’m a software developer passionate about building efficient, scalable,
         and user-friendly web applications. I enjoy turning complex problems

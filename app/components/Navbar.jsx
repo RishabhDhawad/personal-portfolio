@@ -30,7 +30,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
 
   return (
     <div>
-      <div className="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%] dark:hidden">
+      <div className="fixed top-0 right-0 w-11/12 sm:w-10/12 md:w-9/12 -z-10 translate-y-[-80%] dark:hidden">
         <Image
           src={assets.header_bg_color}
           alt="header-bg-color"
@@ -39,7 +39,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
       </div>
 
       <nav
-        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 ${
+        className={`w-full fixed px-4 sm:px-5 lg:px-8 xl:px-[8%] py-3 sm:py-4 flex items-center justify-between z-50 ${
           isScroll
             ? "bg-white bg-opacity-50 backdrop-blur-lg shadow-md dark:bg-darkTheme dark:shadow-white/20"
             : ""
@@ -48,13 +48,13 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
         <a href="#top">
           <Image
             src={isDarkMode ? assets.logo_dark : assets.logo}
-            className="w-28 cursor-pointer mr-14"
+            className="w-20 sm:w-24 md:w-28 cursor-pointer mr-8 sm:mr-12 md:mr-14"
             alt="logo"
           ></Image>
         </a>
 
         <ul
-          className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 absolute left-1/2 -translate-x-1/2
+          className={`hidden md:flex items-center gap-4 lg:gap-6 xl:gap-8 rounded-full px-6 sm:px-8 lg:px-12 py-2 sm:py-3 absolute left-1/2 -translate-x-1/2
             ${
               isScroll
                 ? ""
@@ -88,11 +88,11 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
           </li>
         </ul>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 sm:gap-4">
           <button onClick={() => setIsDarkMode((prev) => !prev)}>
             <Image
               src={isDarkMode ? assets.sun_icon : assets.moon_icon}
-              className="w-6 cursor-pointer "
+              className="w-5 sm:w-6 cursor-pointer "
               alt="moon icon"
             ></Image>
           </button>
@@ -110,52 +110,52 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
             ></Image>
           </a> */}
 
-          <button className="block md:hidden ml-3" onClick={openMenu}>
+          <button className="block md:hidden ml-2 sm:ml-3" onClick={openMenu}>
             <Image
               src={isDarkMode ? assets.menu_white : assets.menu_black}
-              className="w-6 cursor-pointer "
-              alt="moon icon"
+              className="w-5 sm:w-6 cursor-pointer "
+              alt="menu icon"
             ></Image>
           </button>
         </div>
 
         {/*  ----- mobile menu --------  */}
         <ul
-          className="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64
-                top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500 dark:bg-darkHover dark:text-white"
+          className="flex md:hidden flex-col gap-6 sm:gap-8 py-16 sm:py-20 px-8 sm:px-10 fixed -right-64
+                top-0 bottom-0 w-64 sm:w-72 z-50 h-screen bg-rose-50 transition duration-500 dark:bg-darkHover dark:text-white"
           ref={sideMenuRef}
         >
           {/* close btn */}
-          <div className="absolute top-5 right-5" onClick={closeMenu}>
+          <div className="absolute top-4 right-4 sm:top-5 sm:right-5" onClick={closeMenu}>
             <Image
               src={isDarkMode ? assets.close_white : assets.close_black}
               alt="close"
-              className="w-5 cursor-pointer"
+              className="w-4 sm:w-5 cursor-pointer"
             ></Image>
           </div>
 
           <li>
-            <a className="font-Ovo" onClick={closeMenu} href="#top">
+            <a className="font-Ovo text-lg sm:text-xl" onClick={closeMenu} href="#top">
               Home
             </a>
           </li>
           <li>
-            <a className="font-Ovo" onClick={closeMenu} href="#about">
+            <a className="font-Ovo text-lg sm:text-xl" onClick={closeMenu} href="#about">
               About me
             </a>
           </li>
           <li>
-            <a className="font-Ovo" onClick={closeMenu} href="#services">
+            <a className="font-Ovo text-lg sm:text-xl" onClick={closeMenu} href="#services">
               Services
             </a>
           </li>
           <li>
-            <a className="font-Ovo" onClick={closeMenu} href="#work">
+            <a className="font-Ovo text-lg sm:text-xl" onClick={closeMenu} href="#work">
               My Work
             </a>
           </li>
           <li>
-            <a className="font-Ovo" onClick={closeMenu} href="#contact">
+            <a className="font-Ovo text-lg sm:text-xl" onClick={closeMenu} href="#contact">
               Contact me
             </a>
           </li>
