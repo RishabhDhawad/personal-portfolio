@@ -79,6 +79,8 @@ const Header = () => {
           transition={{ duration: 0.6, delay: 1.2 }}
           href="https://drive.google.com/file/d/1EaXhrVHOeACsOYYF6bLbJJE2wGwAqEyn/view?usp=sharing"
           download
+          target="_blank"
+          rel="noopener noreferrer"
           className="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 bg-white dark:text-black"
         >
           My Resume

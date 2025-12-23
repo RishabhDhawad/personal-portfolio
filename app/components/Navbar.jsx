@@ -54,7 +54,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
         </a>
 
         <ul
-          className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3
+          className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 absolute left-1/2 -translate-x-1/2
             ${
               isScroll
                 ? ""
@@ -97,7 +97,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
             ></Image>
           </button>
 
-          <a
+          {/* <a
             href="#contact"
             className="hidden lg:flex items-center gap-3 px-10
                         py-2.5 border border-gray-500 rounded-full ml-4 font-Ovo  dark:border-white/50"
@@ -108,7 +108,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
               className="w-3"
               alt="arrow icon"
             ></Image>
-          </a>
+          </a> */}
 
           <button className="block md:hidden ml-3" onClick={openMenu}>
             <Image
@@ -160,6 +160,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
             </a>
           </li>
         </ul>
+      
       </nav>
     </div>
   );

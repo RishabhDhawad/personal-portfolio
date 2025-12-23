@@ -18,7 +18,7 @@ const Footer = ({isDarkMode}) => {
                 <p>&copy; 2025 Rishabh Dhawad. All rights reserved.</p>
                 <ul className='flex items-center gap-10 justify-center mt-4 sm:mt-0 dark:text-white/90'>
                     <li><a target='_blank' href="https://github.com/RishabhDhawad" className='hover:text-gray-700 dark:hover:text-gray-400'>Github</a></li>
-                    <li><a target='_blank' href="#" className='hover:text-gray-700 dark:hover:text-gray-400'>Instagram</a></li>
+                    {/* <li><a target='_blank' href="#" className='hover:text-gray-700 dark:hover:text-gray-400'>Instagram</a></li> */}
                     <li><a target='_blank' href="#https://www.linkedin.com/in/rishabhdhawad/" className='hover:text-gray-700 dark:hover:text-gray-400'>LinkedIn</a></li>
                 </ul>
             </div>

@@ -93,21 +93,25 @@ export const workData = [
     title: "Frontend Project",
     description: "Responsive and modern web interfaces",
     bgImage: "/work-1.png",
+    link: "https://github.com/RishabhDhawad/Blogify-React-Flask",
   },
   {
     title: "Backend Project",
     description: "Scalable APIs and server-side logic",
     bgImage: "/work-2.png",
+    link: "https://github.com/RishabhDhawad/Voice-Cloning",
   },
   {
     title: "Web Scraping",
     description: "Data extraction and workflow automation",
     bgImage: "/work-3.png",
+    link: "https://github.com/RishabhDhawad/ScrapyMongo",
   },
   {
     title: "API Development",
     description: "Secure and high-performance RESTful services",
     bgImage: "/work-4.png",
+    link: "https://github.com/RishabhDhawad/Blogify-React-Flask",
   },
 ];
 

@@ -20,6 +20,18 @@ export const Work = ({ isDarkMode }) => {
             key={index}
             className="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group"
             style={{ backgroundImage: `url(${project.bgImage})` }}
+            onClick={() => {
+              if (project.link) {
+                window.open(project.link, "_blank", "noopener,noreferrer");
+              }
+            }}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if ((e.key === "Enter" || e.key === " ") && project.link) {
+                window.open(project.link, "_blank", "noopener,noreferrer");
+              }
+            }}
           >
             <div
               className="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3  px-5 flex 
@@ -34,6 +46,22 @@ export const Work = ({ isDarkMode }) => {
                 className="border rounded-full border-black w-9 
                             aspect-square flex items-center justify-center shadow-[2px_2px_0_#000]
                              group-hover:bg-lime-300 transition"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (project.link) {
+                    window.open(project.link, "_blank", "noopener,noreferrer");
+                  }
+                }}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.stopPropagation();
+                    if (project.link) {
+                      window.open(project.link, "_blank", "noopener,noreferrer");
+                    }
+                  }
+                }}
               >
                 <Image src={assets.send_icon} alt="send icon" className="w-5" />
               </div>
@@ -42,7 +70,7 @@ export const Work = ({ isDarkMode }) => {
         ))}
       </div>
 
-      <a
+      {/* <a
         href=""
         className="w-max flex items-center justify-center gap-2
             text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 
@@ -56,7 +84,7 @@ export const Work = ({ isDarkMode }) => {
           alt="arrow"
           className="w-4"
         />
-      </a>
+      </a> */}
     </div>
   );
 };
