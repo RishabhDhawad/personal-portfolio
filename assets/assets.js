@@ -41,6 +41,31 @@ import django from "./django.png";
 import fastapi from "./fastapi.png";
 import react from "./react.png";
 import flask from "./flask.png";
+import appwrite from "./appwrite.png";
+import bootstrap from "./bootstrap.png";
+import css from "./css.png";
+import docker from "./docker.png";
+import express from "./express.png";
+import framer from "./framer.png";
+import graphql from "./graphql.png";
+import heroku from "./heroku.png";
+import netlify from "./netlify.png";
+import nodejs from "./nodejs.png";
+import tailwindcss from "./tailwindcss.png";
+import typescript from "./typescript.png";
+import vite from "./vite.png";
+import html from "./html.png";
+import javascript from "./javascript.png";
+import linux from "./linux.png";
+import opencv from "./opencv.png";
+import matplotlib from "./matplotlib.png";
+import numpy from "./numpy.png";
+import pandas from "./pandas.png";
+import postman from "./postman.png";
+import sqlite from "./sqlite.png";
+import selenium from "./selenium.png";
+import redux from "./redux.png";
+import jwt from "./jwt.png";
 
 export const assets = {
   user_image,
@@ -85,7 +110,32 @@ export const assets = {
   django,
   fastapi,
   react,
-  flask
+  flask,
+  appwrite,
+  bootstrap,
+  css,
+  docker,
+  express,
+  framer,
+  graphql,
+  heroku,
+  netlify,
+  nodejs,
+  tailwindcss,
+  typescript,
+  vite,
+  html,
+  javascript,
+  linux,
+  matplotlib,
+  numpy,
+  opencv,
+  pandas,
+  postman,
+  sqlite,
+  selenium,
+  redux,
+  jwt,
 };
 
 export const workData = [
@@ -167,14 +217,38 @@ export const infoList = [
 
 export const toolsData = [
   assets.python,
+  assets.flask,
   assets.django,
-  // assets.figma,
-  assets.nextjs,
-  assets.mongodb,
   assets.fastapi,
+  assets.selenium,
   assets.react,
+  assets.mongodb,
+  assets.sqlite,
+  assets.postman,
   assets.git,
+  assets.html,
+  assets.css,
+  assets.tailwindcss,
+  assets.bootstrap,
+  assets.javascript,
+  assets.typescript,
+  assets.redux,
+  assets.nodejs,
+  assets.framer,
+  assets.nextjs,
+  assets.express,
+  assets.vite,
+  assets.graphql,
+  assets.appwrite,
   assets.firebase,
+  assets.docker,
+  assets.numpy,
+  assets.matplotlib,
+  assets.opencv,
+  assets.heroku,
+  assets.netlify,
+  assets.linux,
+  assets.figma,
+  assets.jwt,
   assets.vscode,
-  // assets.flask
 ];

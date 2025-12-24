@@ -30,12 +30,12 @@ const Contact = () => {
 
   return (
     <div
-      className='w-full px-[12%] py-10 scroll-mt-20 
+      className='w-full px-[12%] py-0 scroll-mt-20 min-h-screen
         bg-[url("/footer-bg-color.png")] bg-no-repeat bg-[length:90%_auto] dark:bg-none'
       id="contact"
     >
-      <h4 className="text-center mb-2 text-lg font-Ovo">Connect with me</h4>
-      <h2 className="text-center  text-5xl font-Ovo">Get in touch</h2>
+      {/* <h4 className="text-center mb-2 text-lg font-Ovo">Connect with me</h4> */}
+      <h2 className="text-center text-5xl font-Ovo">Get In Touch</h2>
 
       <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo text-lg md:text-xl">
         I'd love to hear from you! If you have any questions, comments, or
@@ -43,7 +43,7 @@ const Contact = () => {
       </p>
 
       <form className="max-w-2xl mx-auto" onSubmit={onSubmit}>
-        <div className="grid grid-cols-auto gap-6 mt-10 mb-8">
+        <div className="grid grid-cols-auto gap-6 mt-10 mb-2">
           <input
             type="text"
             placeholder="Enter your Name"
@@ -69,7 +69,7 @@ const Contact = () => {
         ></textarea>
         <button
           type="submit"
-          className="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-transparent dark:border-[0.5px] dark:hover:bg-darkHover"
+          className="py-1 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-transparent dark:border-[0.5px] dark:hover:bg-darkHover"
         >
           Send Message
           <Image

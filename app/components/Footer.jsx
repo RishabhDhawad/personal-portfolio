@@ -3,29 +3,153 @@ import Image from 'next/image'
 import React from 'react'
 
 const Footer = ({isDarkMode}) => {
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
     return (
-        <div className='mt-20 text-gray-500'>
-            <div className='text-center'>
-                <Image src={isDarkMode ? assets.logo_dark : assets.logo} alt="Logo" className='w-36 mx-auto mb-2' />
+        <footer className='bg-gray-50 dark:bg-gray-900 text-gray-600 dark:text-gray-300 mt-20'>
+            <div className='max-w-6xl mx-auto px-4 py-2'>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mb-8'>
+                    {/* Brand Section */}
+                    <div className='text-center md:text-left'>
+                        <Image 
+                            src={isDarkMode ? assets.logo_dark : assets.logo} 
+                            alt="Logo" 
+                            className='w-40 mx-auto md:mx-0 mb-4 hover:opacity-80 transition-opacity duration-300 cursor-pointer'
+                            onClick={scrollToTop}
+                        />
+                        <p className='text-sm font-medium mb-2 dark:text-white/90'>Rishabh Dhawad</p>
+                        <p className='text-xs text-gray-500 dark:text-gray-400 max-w-xs mx-auto md:mx-0'>
+                            Fullstack Developer passionate about creating amazing web experiences.
+                        </p>
+                    </div>
 
-                <div className='flex items-center gap-2 mx-auto w-max text-center'>
-                    <Image src={isDarkMode ? assets.mail_icon_dark : assets.mail_icon} alt="Mail Icon" className='w-6' />
-                    <p className='dark:text-white/90'>rishabhdhawad29@gmail.com</p>
+                    {/* Contact Section */}
+                    <div className='text-center'>
+                        <h3 className='text-lg font-semibold mb-4 dark:text-white'>Get In Touch</h3>
+                        <div className='flex items-center justify-center gap-2 mb-3 hover:text-gray-900 dark:hover:text-white transition-colors duration-300'>
+                            <Image 
+                                src={isDarkMode ? assets.mail_icon_dark : assets.mail_icon} 
+                                alt="Mail Icon" 
+                                className='w-5 h-5'
+                            />
+                            <a 
+                                href="mailto:rishabhdhawad29@gmail.com" 
+                                className='hover:underline dark:text-white/90'
+                            >
+                                rishabhdhawad29@gmail.com
+                            </a> 
+                            <br />
+                            <Image 
+                                src={isDarkMode ? assets.mail_icon_dark : assets.mail_icon} 
+                                alt="Phone Icon" 
+                                className='w-5 h-5'
+                            />
+                            <a 
+                                href="tel:+919111989948" 
+                                className='hover:underline dark:text-white/90'
+                            >
+                                (+91)9111989948
+                            </a>
+                        </div>
+                        <p className='text-xs text-gray-500 dark:text-gray-400'>
+                            Available for freelance projects
+                        </p>
+                    </div>
+
+                    {/* Quick Links Section */}
+                    <div className='text-center md:text-right'>
+                        <h3 className='text-lg font-semibold mb-4 dark:text-white'>Quick Links</h3>
+                        <nav className='space-y-2'>
+                            <a 
+                                href="#about" 
+                                className='block text-sm hover:text-gray-900 dark:hover:text-white transition-colors duration-300'
+                            >
+                                About
+                            </a>
+                            <a 
+                                href="#services" 
+                                className='block text-sm hover:text-gray-900 dark:hover:text-white transition-colors duration-300'
+                            >
+                                Services
+                            </a>
+                            <a 
+                                href="#work" 
+                                className='block text-sm hover:text-gray-900 dark:hover:text-white transition-colors duration-300'
+                            >
+                                Portfolio
+                            </a>
+                            <a 
+                                href="#contact" 
+                                className='block text-sm hover:text-gray-900 dark:hover:text-white transition-colors duration-300'
+                            >
+                                Contact
+                            </a>
+                        </nav>
+                    </div>
                 </div>
+
+                {/* Social Media & Copyright */}
+                <div className="border-t border-gray-200 dark:border-gray-700 pt-8">
+                    <div className='flex flex-col md:flex-row items-center justify-between gap-4'>
+                        <p className='text-sm text-gray-500 dark:text-gray-400 text-center md:text-left'>
+                            &copy; 2025 Rishabh Dhawad. All rights reserved.
+                        </p>
+                        
+                        <div className='flex items-center gap-6'>
+                            <a 
+                                target='_blank' 
+                                href="https://github.com/RishabhDhawad" 
+                                className='flex items-center gap-2 text-sm hover:text-gray-900 dark:hover:text-white transition-all duration-300 hover:scale-105'
+                                rel="noopener noreferrer"
+                            >
+                                <Image 
+                                    src={isDarkMode ? assets.github_icon_dark || assets.mail_icon_dark : assets.github_icon || assets.mail_icon} 
+                                    alt="Github" 
+                                    className='w-5 h-5'
+                                />
+                                Github
+                            </a>
+                            <a 
+                                target='_blank' 
+                                href="https://www.linkedin.com/in/rishabhdhawad/" 
+                                className='flex items-center gap-2 text-sm hover:text-gray-900 dark:hover:text-white transition-all duration-300 hover:scale-105'
+                                rel="noopener noreferrer"
+                            >
+                                <Image 
+                                    src={isDarkMode ? assets.linkedin_icon_dark || assets.mail_icon_dark : assets.linkedin_icon || assets.mail_icon} 
+                                    alt="LinkedIn" 
+                                    className='w-5 h-5'
+                                />
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Back to Top Button */}
+                <button
+                    onClick={scrollToTop}
+                    className='fixed bottom-8 right-8 bg-black dark:bg-white text-white dark:text-black p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 z-50'
+                    aria-label='Back to top'
+                >
+                    <svg 
+                        className='w-5 h-5' 
+                        fill='none' 
+                        stroke='currentColor' 
+                        viewBox='0 0 24 24'
+                    >
+                        <path 
+                            strokeLinecap='round' 
+                            strokeLinejoin='round' 
+                            strokeWidth={2} 
+                            d='M5 10l7-7m0 0l7 7m-7-7v18' 
+                        />
+                    </svg>
+                </button>
             </div>
-
-            <div className="text-center sm:flex items-center justify-between border-t border-gray-400 mx-[10%] mt-12 py-6 dark:text-white/90">
-                <p>&copy; 2025 Rishabh Dhawad. All rights reserved.</p>
-                <ul className='flex items-center gap-10 justify-center mt-4 sm:mt-0 dark:text-white/90'>
-                    <li><a target='_blank' href="https://github.com/RishabhDhawad" className='hover:text-gray-700 dark:hover:text-gray-400'>Github</a></li>
-                    {/* <li><a target='_blank' href="#" className='hover:text-gray-700 dark:hover:text-gray-400'>Instagram</a></li> */}
-                    <li><a target='_blank' href="https://www.linkedin.com/in/rishabhdhawad/" className='hover:text-gray-700 dark:hover:text-gray-400'>LinkedIn</a></li>
-                </ul>
-            </div>
-
-
-        </div>
-
+        </footer>
     )
 }
 

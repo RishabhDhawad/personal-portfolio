@@ -4,8 +4,8 @@ import React from "react";
 
 export const Work = ({ isDarkMode }) => {
   return (
-    <div id="work" className="w-full px-[12%] py-10 scroll-mt-20 min-h-screen">
-      <h4 className="text-center mb-2 text-lg font-Ovo">My Portfolio</h4>
+    <div id="work" className="w-full px-[12%] py-0 scroll-mt-20 min-h-screen">
+      {/* <h4 className="text-center mb-2 text-lg font-Ovo">My Portfolio</h4> */}
       <h2 className="text-center  text-5xl font-Ovo">My latest work</h2>
 
       <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo text-lg md:text-xl">
@@ -58,7 +58,11 @@ export const Work = ({ isDarkMode }) => {
                   if (e.key === "Enter" || e.key === " ") {
                     e.stopPropagation();
                     if (project.link) {
-                      window.open(project.link, "_blank", "noopener,noreferrer");
+                      window.open(
+                        project.link,
+                        "_blank",
+                        "noopener,noreferrer"
+                      );
                     }
                   }
                 }}
@@ -73,18 +77,18 @@ export const Work = ({ isDarkMode }) => {
       {/* <a
         href=""
         className="w-max flex items-center justify-center gap-2
-            text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 
-            mx-auto my-20 hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover"
-      >
+        text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 
+        mx-auto my-20 hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover"
+        >
         Show more
         <Image
-          src={
-            isDarkMode ? assets.right_arrow_bold_dark : assets.right_arrow_bold
+        src={
+          isDarkMode ? assets.right_arrow_bold_dark : assets.right_arrow_bold
           }
           alt="arrow"
           className="w-4"
-        />
-      </a> */}
+          />
+          </a> */}
     </div>
   );
 };

@@ -39,7 +39,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
       </div>
 
       <nav
-        className={`w-full fixed px-4 sm:px-5 lg:px-8 xl:px-[8%] py-3 sm:py-4 flex items-center justify-between z-50 ${
+        className={`w-full fixed px-4 sm:px-5 lg:px-8 xl:px-[8%] py-2 sm:py-1 flex items-center justify-between z-50 ${
           isScroll
             ? "bg-white bg-opacity-50 backdrop-blur-lg shadow-md dark:bg-darkTheme dark:shadow-white/20"
             : ""
@@ -62,27 +62,27 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
             } `}
         >
           <li>
-            <a className="font-Ovo" href="#top">
+            <a className="font-Ovo text-xl" href="#top">
               Home
             </a>
           </li>
           <li>
-            <a className="font-Ovo" href="#about">
+            <a className="font-Ovo text-xl" href="#about">
               About me
             </a>
           </li>
           <li>
-            <a className="font-Ovo" href="#services">
+            <a className="font-Ovo text-xl" href="#services">
               Services
             </a>
           </li>
           <li>
-            <a className="font-Ovo" href="#work">
+            <a className="font-Ovo text-xl" href="#work">
               My Work
             </a>
           </li>
           <li>
-            <a className="font-Ovo" href="#contact">
+            <a className="font-Ovo text-xl" href="#contact">
               Contact me
             </a>
           </li>
