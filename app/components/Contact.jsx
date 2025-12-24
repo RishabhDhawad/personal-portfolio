@@ -30,7 +30,7 @@ const Contact = () => {
 
   return (
     <div
-      className='w-full px-[12%] py-0 scroll-mt-20 min-h-screen
+      className='w-full px-[12%] py-4 scroll-mt-20 
         bg-[url("/footer-bg-color.png")] bg-no-repeat bg-[length:90%_auto] dark:bg-none'
       id="contact"
     >

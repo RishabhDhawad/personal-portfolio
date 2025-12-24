@@ -8,15 +8,15 @@ const Footer = ({isDarkMode}) => {
     };
 
     return (
-        <footer className='bg-gray-50 dark:bg-gray-900 text-gray-600 dark:text-gray-300 mt-20'>
+        <footer className='bg-gray-50 dark:bg-gray-900 text-gray-600 dark:text-gray-300 '>
             <div className='max-w-6xl mx-auto px-4 py-2'>
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mb-8'>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
                     {/* Brand Section */}
                     <div className='text-center md:text-left'>
                         <Image 
                             src={isDarkMode ? assets.logo_dark : assets.logo} 
                             alt="Logo" 
-                            className='w-40 mx-auto md:mx-0 mb-4 hover:opacity-80 transition-opacity duration-300 cursor-pointer'
+                            className='w-40 mx-auto md:mx-0  hover:opacity-80 transition-opacity duration-300 cursor-pointer'
                             onClick={scrollToTop}
                         />
                         <p className='text-sm font-medium mb-2 dark:text-white/90'>Rishabh Dhawad</p>
@@ -27,7 +27,7 @@ const Footer = ({isDarkMode}) => {
 
                     {/* Contact Section */}
                     <div className='text-center'>
-                        <h3 className='text-lg font-semibold mb-4 dark:text-white'>Get In Touch</h3>
+                        <h3 className='text-lg font-semibold mb-6 dark:text-white'>Get In Touch</h3>
                         <div className='flex items-center justify-center gap-2 mb-3 hover:text-gray-900 dark:hover:text-white transition-colors duration-300'>
                             <Image 
                                 src={isDarkMode ? assets.mail_icon_dark : assets.mail_icon} 

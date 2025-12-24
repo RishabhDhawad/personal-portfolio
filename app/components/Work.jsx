@@ -4,7 +4,7 @@ import React from "react";
 
 export const Work = ({ isDarkMode }) => {
   return (
-    <div id="work" className="w-full px-[12%] py-0 scroll-mt-20 min-h-screen">
+    <div id="work" className="w-full px-[12%] py-0 scroll-mt-20 mb-4">
       {/* <h4 className="text-center mb-2 text-lg font-Ovo">My Portfolio</h4> */}
       <h2 className="text-center  text-5xl font-Ovo">My latest work</h2>
 
@@ -74,11 +74,12 @@ export const Work = ({ isDarkMode }) => {
         ))}
       </div>
 
-      {/* <a
-        href=""
+      <a
+        href="https://github.com/RishabhDhawad"
         className="w-max flex items-center justify-center gap-2
         text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 
-        mx-auto my-20 hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover"
+        mx-auto my-10 hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover"
+        target="_blank"
         >
         Show more
         <Image
@@ -88,7 +89,7 @@ export const Work = ({ isDarkMode }) => {
           alt="arrow"
           className="w-4"
           />
-          </a> */}
+          </a>
     </div>
   );
 };
