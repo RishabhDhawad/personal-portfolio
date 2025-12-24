@@ -8,12 +8,12 @@ const Services = () => {
       {/* <h4 className="text-center mb-2 text-lg font-Ovo">What I offer</h4> */}
       <h2 className="text-center  text-5xl font-Ovo">My Services</h2>
 
-      <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo text-lg md:text-xl">
+      <p className="text-center max-w-2xl mx-auto mt-8 mb-12 font-Ovo text-lg md:text-xl">
         I create efficient, scalable, and user-friendly web applications
         tailored to your needs.
       </p>
 
-      <div className="grid grid-cols-auto gap-6 my-10 ">
+      <div className="grid grid-cols-auto gap-6 my-16 ">
         {serviceData.map(({ icon, title, description, link }, index) => (
           <div
             key={index}
@@ -39,10 +39,10 @@ const Services = () => {
             <p className="text-sm text-gray-600 leading-5 dark:text-white/60">
               {description}
             </p>
-            <a href={link} className="flex items-center gap-2 text-sm mt-5">
+            {/* <a href={link} className="flex items-center gap-2 text-sm mt-5">
               Read more{" "}
               <Image alt="arrow" src={assets.right_arrow} className="w-4" />
-            </a>
+            </a> */}
           </div>
         ))}
       </div>
