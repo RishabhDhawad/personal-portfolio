@@ -40,18 +40,6 @@ const Footer = ({isDarkMode}) => {
                             >
                                 rishabhdhawad29@gmail.com
                             </a> 
-                            <br />
-                            <Image 
-                                src={isDarkMode ? assets.mail_icon_dark : assets.mail_icon} 
-                                alt="Phone Icon" 
-                                className='w-5 h-5'
-                            />
-                            <a 
-                                href="tel:+919111989948" 
-                                className='hover:underline dark:text-white/90'
-                            >
-                                (+91)9111989948
-                            </a>
                         </div>
                         <p className='text-xs text-gray-500 dark:text-gray-400'>
                             Available for freelance projects
