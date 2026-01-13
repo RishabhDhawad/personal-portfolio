@@ -1,11 +1,89 @@
 import { assets } from '@/assets/assets'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 const Footer = ({isDarkMode}) => {
+    const [isSnowing, setIsSnowing] = useState(false);
+
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
+
+    const toggleSnow = () => {
+        setIsSnowing(!isSnowing);
+    };
+
+    useEffect(() => {
+        if (isSnowing) {
+            // Create snow effect
+            const snowContainer = document.createElement('div');
+            snowContainer.id = 'snow-container';
+            snowContainer.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: 9999;
+                overflow: hidden;
+            `;
+            document.body.appendChild(snowContainer);
+
+            const createSnowflake = () => {
+                const snowflake = document.createElement('div');
+                snowflake.innerHTML = '❄';
+                snowflake.style.cssText = `
+                    position: absolute;
+                    color: white;
+                    font-size: ${Math.random() * 10 + 10}px;
+                    left: ${Math.random() * 100}%;
+                    top: -20px;
+                    opacity: ${Math.random() * 0.8 + 0.2};
+                    animation: fall ${Math.random() * 3 + 2}s linear infinite;
+                    text-shadow: 0 0 5px rgba(255,255,255,0.8);
+                `;
+                snowContainer.appendChild(snowflake);
+
+                setTimeout(() => {
+                    snowflake.remove();
+                }, 5000);
+            };
+
+            // Add CSS animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fall {
+                    to {
+                        transform: translateY(100vh) rotate(360deg);
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+
+            const snowInterval = setInterval(createSnowflake, 200);
+
+            return () => {
+                clearInterval(snowInterval);
+                if (document.getElementById('snow-container')) {
+                    document.getElementById('snow-container').remove();
+                }
+                if (document.head.querySelector('style')) {
+                    document.head.querySelector('style').remove();
+                }
+            };
+        } else {
+            // Remove snow effect
+            const snowContainer = document.getElementById('snow-container');
+            if (snowContainer) {
+                snowContainer.remove();
+            }
+            const style = document.head.querySelector('style');
+            if (style && style.textContent.includes('@keyframes fall')) {
+                style.remove();
+            }
+        }
+    }, [isSnowing]);
 
     return (
         <footer className='bg-gray-50 dark:bg-gray-900 text-gray-600 dark:text-gray-300 '>
@@ -115,6 +193,20 @@ const Footer = ({isDarkMode}) => {
                         </div>
                     </div>
                 </div>
+
+                {/* Snow Button */}
+                <button
+                    onClick={toggleSnow}
+                    className={`fixed bottom-8 left-8 w-12 h-12 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 z-50 flex items-center justify-center text-2xl ${
+                        isSnowing 
+                            ? 'bg-blue-500 text-white hover:bg-blue-600' 
+                            : 'bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
+                    }`}
+                    aria-label='Toggle snow'
+                    title='Let it snow'
+                >
+                    ❄
+                </button>
 
                 {/* Back to Top Button */}
                 <button
