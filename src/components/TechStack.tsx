@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Zap, Code, Rocket, Sparkles } from 'lucide-react';
 
 const tools = [
   { name: 'Python', category: 'backend' },
@@ -28,6 +29,29 @@ const tools = [
 ];
 
 const TechStack = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const floatingVariants = {
+    initial: { y: 0, rotate: 0 },
+    animate: {
+      y: [-3, 3, -3],
+      rotate: [-2, 2, -2],
+      transition: {
+        duration: 4,
+        repeat: Infinity,
+        ease: "easeInOut" as const
+      }
+    }
+  };
   return (
     <section className="relative py-24 px-4">
       <div className="max-w-6xl mx-auto">
@@ -35,8 +59,9 @@ const TechStack = () => {
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="section-heading text-center"
+          className="section-heading flex items-center gap-2"
         >
+          <Zap className="w-5 h-5 text-primary" />
           Tech Stack
         </motion.p>
         <motion.h2 
@@ -44,8 +69,14 @@ const TechStack = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-3xl md:text-4xl font-bold mb-12 text-center"
+          className="text-3xl md:text-4xl font-bold mb-12 text-center flex items-center justify-center gap-3"
         >
+          <motion.div
+            animate={{ rotate: [0, 360] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+          >
+            <Rocket className="w-8 h-8 text-primary" />
+          </motion.div>
           Tools I Know
         </motion.h2>
 
@@ -57,6 +88,14 @@ const TechStack = () => {
           transition={{ delay: 0.2 }}
           className="relative overflow-hidden mb-1"
         >
+          <motion.div 
+            variants={floatingVariants}
+            initial="initial"
+            animate="animate"
+            className="absolute inset-0 flex items-center justify-center opacity-10"
+          >
+            <Sparkles className="w-6 h-6 text-primary/30" />
+          </motion.div>
           <div className="flex animate-scroll gap-4 py-4">
             {[...tools, ...tools].map((tool, index) => (
               <motion.div
@@ -65,11 +104,19 @@ const TechStack = () => {
                   scale: 1.1, 
                   y: -5,
                   borderColor: 'hsl(var(--primary))',
-                  backgroundColor: 'hsl(var(--primary) / 0.1)'
+                  backgroundColor: 'hsl(var(--primary) / 0.1)',
+                  rotate: [0, 5, -5, 0],
+                  transition: { duration: 0.3 }
                 }}
-                className="flex-shrink-0 px-6 py-3 rounded-xl border border-border bg-card/50 backdrop-blur-sm transition-colors cursor-default"
+                className="flex-shrink-0 px-6 py-3 rounded-xl border border-border bg-card/50 backdrop-blur-sm transition-colors cursor-default relative overflow-hidden"
               >
-                <span className="font-mono text-foreground whitespace-nowrap">
+                <motion.div
+                  initial={{ x: -100 }}
+                  whileHover={{ x: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent"
+                />
+                <span className="font-mono text-foreground whitespace-nowrap relative z-10">
                   {tool.name}
                 </span>
               </motion.div>
@@ -85,6 +132,14 @@ const TechStack = () => {
           transition={{ delay: 0.3 }}
           className="relative overflow-hidden"
         >
+          <motion.div 
+            variants={floatingVariants}
+            initial="initial"
+            animate="animate"
+            className="absolute inset-0 flex items-center justify-center opacity-10"
+          >
+            <Code className="w-6 h-6 text-primary/30" />
+          </motion.div>
           <div className="flex animate-scroll-reverse gap-4 py-4">
             {[...tools.slice().reverse(), ...tools.slice().reverse()].map((tool, index) => (
               <motion.div
@@ -93,11 +148,19 @@ const TechStack = () => {
                   scale: 1.1, 
                   y: -5,
                   borderColor: 'hsl(var(--primary))',
-                  backgroundColor: 'hsl(var(--primary) / 0.1)'
+                  backgroundColor: 'hsl(var(--primary) / 0.1)',
+                  rotate: [0, -5, 5, 0],
+                  transition: { duration: 0.3 }
                 }}
-                className="flex-shrink-0 px-6 py-3 rounded-xl border border-border bg-card/50 backdrop-blur-sm transition-colors cursor-default"
+                className="flex-shrink-0 px-6 py-3 rounded-xl border border-border bg-card/50 backdrop-blur-sm transition-colors cursor-default relative overflow-hidden"
               >
-                <span className="font-mono text-foreground whitespace-nowrap">
+                <motion.div
+                  initial={{ x: 100 }}
+                  whileHover={{ x: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute inset-0 bg-gradient-to-l from-transparent via-primary/20 to-transparent"
+                />
+                <span className="font-mono text-foreground whitespace-nowrap relative z-10">
                   {tool.name}
                 </span>
               </motion.div>
@@ -105,26 +168,36 @@ const TechStack = () => {
           </div>
         </motion.div>
 
-        {/* Static Grid for Mobile */}
+        {/* Static Grid for Mobile with enhanced animations */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
+          transition={{ delay: 0.4 }}
           className="mt-8 flex flex-wrap justify-center gap-3 md:hidden"
         >
           {tools.slice(0, 12).map((tool, index) => (
-            <motion.span
+            <motion.div
               key={tool.name}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
               viewport={{ once: true }}
-              transition={{ delay: 0.3 + index * 0.05 }}
-              whileHover={{ scale: 1.1 }}
-              className="px-4 py-2 rounded-lg border border-border bg-card/50 text-sm font-mono text-foreground"
+              whileHover={{ 
+                scale: 1.15,
+                rotate: [0, 10, -10, 0],
+                transition: { duration: 0.4 }
+              }}
+              className="px-4 py-2 rounded-lg border border-border bg-card/50 text-sm font-mono relative overflow-hidden"
             >
-              {tool.name}
-            </motion.span>
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: index * 0.05, duration: 0.3 }}
+                className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-primary/20"
+              />
+              <span className="relative z-10">{tool.name}</span>
+            </motion.div>
           ))}
         </motion.div>
       </div>
